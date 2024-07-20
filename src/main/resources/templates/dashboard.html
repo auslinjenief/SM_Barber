@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body class="container">
+<br><br>
+<a href="login" class="btn btn-success">Logout</a><br><br>
+<table class="table table-hover">
+	<tr>
+		<th>Fname</th>
+		<th>Lname</th>
+		<th>Email</th>
+		<th>Password</th>
+		<th>PhoneNo</th>
+		<th>Gender</th>
+		<th>SelectTime</th>
+		<th>Description</th>
+		<th>Action</th>
+	</tr>
+	<tr th:each="smb : ${smblist}">
+		<td th:text="${smb.fname}"></td>
+		<td th:text="${smb.lname}"></td>
+		<td th:text="${smb.email}"></td>
+		<td th:text="${smb.password}"></td>
+		<td th:text="${smb.phoneno}"></td>
+		<td th:text="${smb.gender}"></td>
+		<td th:text="${smb.selecttime}"></td>
+		<td th:text="${smb.description}"></td>
+		<td>
+			<a th:href="@{/edit/{id}(id=${smb.id})}" class="btn btn-primary">Edit</a>
+			<a th:href="@{/delete/{id}(id=${smb.id})}" class="btn btn-danger">Delete</a>
+		</td>
+	</tr>
+</table>
+                 
+     </div>
+   </div>
+ </div>
+</body>
+</html>

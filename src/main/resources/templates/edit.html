@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body class="container" style="width: 650px;">
+<br>
+<h2 style="text-align: center">Edit Page</h2>
+<br>
+<form action="http://localhost:8080/edit-post" method="post" th:object="${smbobj}">
+<input type="hidden"  name="id" th:value="${smbobj.id}">
+<div class="mb-3">
+    <label class="form-label">Fname :</label>
+    <input type="text" class="form-control" name="fname" placeholder="Enter your first name" th:value="${smbobj.fname}" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Lname :</label>
+    <input type="text" class="form-control" name="lname" placeholder="Enter your last name" th:value="${smbobj.lname}">
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Email address :</label>
+    <input type="email" class="form-control" name="email" placeholder="Enter your email" th:value="${smbobj.email}" readonly>
+    </div>
+  <div class="mb-3">
+    <label class="form-label">Password :</label>
+    <input type="text" class="form-control" name="password" placeholder="Enter your password" th:value="${smbobj.password}" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">PhoneNo :</label>
+    <input type="text" class="form-control" name="phoneno" placeholder="Enter your phoneno" th:value="${smbobj.phoneno}" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Gender :</label>
+    <input type="text" class="form-control" name="gender" placeholder="Enter male/female/others" th:value="${smbobj.gender}" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">SelectTime :</label>
+    <input type="text" class="form-control" name="selecttime" placeholder="Ex: Weekdays / Weekend" th:value="${smbobj.selecttime}" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Description :</label>
+    <input type="text" class="form-control" name="description" placeholder="Ex: Hair cut" th:value="${smbobj.description}" required>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Save</button>
+  <a href="/">Back</a>
+  <br><br>
+</form>
+</body>
+</html>
